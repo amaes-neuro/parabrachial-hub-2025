@@ -148,7 +148,8 @@ def run_episode(agent, eps, pain_profile):
         # imm_reward(next_state1, next_state2)
 
         total_reward += reward
-
+      
+        done = (i >= time_steps)
         # Store the transition in memory
         agent.replay_memory.push(
             (FloatTensor([state]),
